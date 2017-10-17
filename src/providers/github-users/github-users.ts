@@ -22,9 +22,9 @@ export class GithubUsers {
       .map(res => <User[]>res.json());
   }
 
-  loadDetails(login: string): Observable<User[]> {
+  loadDetails(login: string): Observable<User> {
     return this.http.get(this.githubApiUrl + '/users' + '/'+ login)
-      .map(res => <User[]>res.json());
+      .map(res => <User>res.json());
   }
 
 }
