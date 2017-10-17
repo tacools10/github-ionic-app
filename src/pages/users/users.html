@@ -1,8 +1,16 @@
 <ion-header>
-  <!-- ion-header contents commented out for brevity -->
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Users
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-searchbar (input)="search($event)"></ion-searchbar>
   <ion-list>
     <button ion-item *ngFor="let user of users" (click)="goToDetails(user.login)">
       <ion-avatar item-left>

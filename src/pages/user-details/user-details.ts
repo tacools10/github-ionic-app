@@ -17,14 +17,17 @@ import {User} from "../../models/users";
 })
 export class UserDetailsPage {
 
-  login: string;
   user: User;
+  login: string;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private githubUsers: GithubUsers) {
       this.login = navParams.get('login');
+      console.log(this.login);
       githubUsers.loadDetails(this.login).subscribe(user => {
         this.user = user;
       })
   }
+
 
 }
