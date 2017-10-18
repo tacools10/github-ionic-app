@@ -11,7 +11,7 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item *ngFor="let article of articles">
+    <button ion-item *ngFor="let article of articles" (click)="openUrl(article.url)">
       <ion-avatar item-left>
         <img [src]="article.urlToImage">
       </ion-avatar>
