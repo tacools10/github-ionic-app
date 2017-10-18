@@ -10,6 +10,8 @@ import {UsersPage} from "../pages/users/users";
 import {GithubUsers} from '../providers/github-users/github-users';
 import {HttpModule} from "@angular/http";
 import {UserDetailsPage} from "../pages/user-details/user-details";
+import {NewsPage} from "../pages/news/news";
+import { NewsStoriesProvider } from '../providers/news-stories/news-stories';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import {UserDetailsPage} from "../pages/user-details/user-details";
     OrganisationsPage,
     ReposPage,
     UsersPage,
-    UserDetailsPage
+    UserDetailsPage,
+    NewsPage
   ],
   imports: [
     BrowserModule,
@@ -30,13 +33,15 @@ import {UserDetailsPage} from "../pages/user-details/user-details";
     OrganisationsPage,
     ReposPage,
     UsersPage,
-    UserDetailsPage
+    UserDetailsPage,
+    NewsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GithubUsers
+    GithubUsers,
+    NewsStoriesProvider
   ]
 })
 export class AppModule {}
